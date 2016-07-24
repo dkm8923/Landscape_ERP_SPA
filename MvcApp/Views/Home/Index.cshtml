@@ -1,0 +1,552 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="divHandlebarsTemplate"></div>
+
+<script id="businessDetailTemplate" type="text/x-handlebars-template">
+    <div id="divBusinessInfo" class="inputForm hideSection">
+        <div class="col-md-6">
+            <dl class="dl-horizontal">
+                <dt>Name:</dt>
+                <dd id="ddBusName">{{obj.Name}}</dd>
+                <dt>Business Type:</dt>
+                <dd id="ddBusType">{{obj.BusinessTypeId}}</dd>
+                <dt>Email:</dt>
+                <dd id="ddBusEmail">{{obj.Email}}</dd>
+                <dt>Phone 1:</dt>
+                <dd id="ddBusPhone1">{{obj.Email}}</dd>
+                <dt>Phone 1 Ext:</dt>
+                <dd id="ddBusPhone1Ext"></dd>
+                <dt>Phone 2:</dt>
+                <dd id="ddBusPhone2"></dd>
+                <dt>Phone 2 Ext:</dt>
+                <dd id="ddBusPhone2Ext"></dd>
+            </dl>
+        </div>
+        <div class="col-md-6">
+            <dl class="dl-horizontal">
+                <dt>Address 1:</dt>
+                <dd id="ddBusAddress1"></dd>
+                <dt>Address 2:</dt>
+                <dd id="ddBusAddress2"></dd>
+                <dt>City:</dt>
+                <dd id="ddBusCity"></dd>
+                <dt>State:</dt>
+                <dd id="ddBusState"></dd>
+                <dt>Zip:</dt>
+                <dd id="ddBusZip"></dd>
+                <dt>Comments:</dt>
+                <dd id="ddBusComments"></dd>
+            </dl>
+        </div>
+    </div>
+</script>
+
+    <script id="dashboardTemplate" type="text/x-handlebars-template">
+        <div id="divDashboard" class="inputForm hideSection" style="height: 810px;">
+            Dashboard content goes here!!!
+            <input type="button" id="btnShowModal" value="Show Modal" />
+            <input id="datetimepicker" style="width: 100%;" />
+            <div id="window">
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="box box-solid">
+                    <div class="box-header with-border">
+                        <i class="fa fa-text-width"></i>
+                        <h3 class="box-title">Business Info:</h3>
+                    </div>
+                    <div class="box-body">
+                        <dl class="dl-horizontal">
+                            <dt>Name:</dt>
+                            <dd id="ddBusName"></dd>
+                            <dt>Business Type:</dt>
+                            <dd id="ddBusType"></dd>
+                            <dt>Email:</dt>
+                            <dd id="ddBusEmail"></dd>
+                            <dt>Phone 1:</dt>
+                            <dd id="ddBusPhone1"></dd>
+                            <dt>Phone 1 Ext:</dt>
+                            <dd id="ddBusPhone1Ext"></dd>
+                            <dt>Phone 2:</dt>
+                            <dd id="ddBusPhone2"></dd>
+                            <dt>Phone 2 Ext:</dt>
+                            <dd id="ddBusPhone2Ext"></dd>
+                            <dt>Address 1:</dt>
+                            <dd id="ddBusAddress1"></dd>
+                            <dt>Address 2:</dt>
+                            <dd id="ddBusAddress2"></dd>
+                            <dt>City:</dt>
+                            <dd id="ddBusCity"></dd>
+                            <dt>State:</dt>
+                            <dd id="ddBusState"></dd>
+                            <dt>Zip:</dt>
+                            <dd id="ddBusZip"></dd>
+                            <dt>Comments:</dt>
+                            <dd id="ddBusComments"></dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </script>
+
+    <script id="createBusinessTemplate" type="text/x-handlebars-template">
+        <div id="divCreateBusiness" class="inputForm hideSection">
+            <div class="col-md-6">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Create Business</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="crudInputs">
+                            <div class="busErrorMsgContainer"></div>
+                            <div class="form-group">
+                                <label for="txtBusName">Name</label>
+                                <input type="text" id="txtBusName" class="form-control validateBusinessForm" placeholder="Name">
+                            </div>
+                            <div id="divBusType" class="form-group">
+                                <label for="ddlBusType">Business Type</label>
+                                <select id="ddlBusType" class="form-control select2 select2-hidden-accessible validateBusinessForm">
+                                    <option value="0">Select A Business Type</option>
+                                    <option value="1">Lawn Care</option>
+                                    <option value="2">Landscape Design</option>
+                                    <option value="3">Excavating</option>
+                                </select>
+                            </div>
+                            <div id="divBusEmail" class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+                                    <input type="text" id="txtBusEmail" class="form-control validateBusinessForm" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
+                                        <input type="text" id="txtBusPhone1" class="form-control" placeholder="Phone 1">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1">Ext</span>
+                                        <input type="text" id="txtBusPhone1Ext" class="form-control" placeholder="Phone 1 Ext">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 col-md form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
+                                        <input type="text" id="txtBusPhone2" class="form-control" placeholder="Phone 2">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1">Ext</span>
+                                        <input type="text" id="txtBusPhone2Ext" class="form-control" placeholder="Phone 2 Ext">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtBusAddress1">Address 1</label>
+                                <input type="text" id="txtBusAddress1" class="form-control" placeholder="Address 1">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtBusAddress2">Address 2</label>
+                                <input type="text" id="txtBusAddress2" class="form-control" placeholder="Address 2">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtBusCity">City</label>
+                                <input type="text" id="txtBusCity" class="form-control" placeholder="City">
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <label for="ddlBusState">State</label>
+                                    <select id="ddlBusState" class="form-control select2 select2-hidden-accessible">
+                                        <option value="0">Select A State</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <label for="txtBusZip">Zip</label>
+                                    <input type="text" id="txtBusZip" class="form-control" placeholder="Zip">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-comment"></i></span>
+                                    <textarea id="taBusComments" rows="3" class="form-control" placeholder="Comments"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <div class="row">
+                                <button type="submit" id="btnCancelCreateBusiness" class="btn btn-default col-xs-12 col-sm-5 col-md-3 form-group margin-bottom">Cancel</button>
+                                <button type="submit" id="btnCreateBusiness" class="btn btn-info col-xs-12 col-sm-5 col-md-3 form-group pull-right margin-bottom">Create</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="viewBusinessTemplate" type="text/x-handlebars-template">
+        <div id="divViewBusiness" class="inputForm hideSection">
+            <input type="button" id="testBtn" value="click to pull back businesses" />
+            <table id="testTable">
+                @*<thead>
+                        <tr>
+                            <th>Business Name</th>
+                            <th>Business Type</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Zip</th>
+                        </tr>
+                    </thead>*@
+            </table>
+        </div>
+    </script>
+
+    <script id="createCustomerTemplate" type="text/x-handlebars-template">
+        <div id="divCreateCustomer" class="inputForm hideSection">
+            <div class="col-md-6">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Create Customer</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="crudInputs">
+                            <div class="form-group">
+                                <label for="txtCustName">Name</label>
+                                <input type="text" id="txtCustName" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="ddlCustType">Customer Type</label>
+                                <select id="ddlCustType" class="form-control select2 select2-hidden-accessible">
+                                    <option value="0">Select A Customer Type</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+                                    <input type="text" id="txtCustEmail" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="row form-group">
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1"><i class="fa fa-phone"></i></span>
+                                        <input type="text" id="txtCustPhone1" class="form-control" placeholder="Phone 1">
+                                    </div>
+                                </div>
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1">Ext</span>
+                                        <input type="text" id="txtCustPhone1Ext" class="form-control" placeholder="Phone 1 Ext">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-mobile-phone"></i></span>
+                                    <input type="text" id="txtCustMobilePhone" class="form-control" placeholder="Mobile Phone">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtCustAddress1">Address 1</label>
+                                <input type="text" id="txtCustAddress1" class="form-control" placeholder="Address 1">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtCustAddress2">Address 2</label>
+                                <input type="text" id="txtCustAddress2" class="form-control" placeholder="Address 2">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtCustCity">City</label>
+                                <input type="text" id="txtCustCity" class="form-control" placeholder="City">
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <label for="ddlCustState">State</label>
+                                    <select id="ddlCustState" class="form-control select2 select2-hidden-accessible">
+                                        <option value="0">Select A State</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <label for="txtCustZip">Zip</label>
+                                    <input type="text" id="txtCustZip" class="form-control" placeholder="Zip">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-comment"></i></span>
+                                    <textarea id="taCustComments" rows="3" class="form-control" placeholder="Comments"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <div class="row">
+                                <button type="submit" id="btnCancelCreateBusiness" class="btn btn-default col-xs-12 col-sm-5 col-md-3 form-group margin-bottom">Cancel</button>
+                                <button type="submit" id="btnCreateBusiness" class="btn btn-info col-xs-12 col-sm-5 col-md-3 form-group pull-right margin-bottom">Create</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="createUserTemplate" type="text/x-handlebars-template">
+        <div id="divCreateUser" class="inputForm hideSection">
+            <div class="col-md-6">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Create User</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="crudInputs">
+                            <div class="userErrorMsgContainer"></div>
+                            <div class="form-group validateUserForm" id="divUserType">
+                                <label for="ddlUserType">User Type</label>
+                                <select id="ddlUserType" class="form-control select2 select2-hidden-accessible">
+                                    <option value="0">Select A User Type</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group validateUserForm" id="divUserName">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                    <input type="text" id="txtUserName" class="form-control" placeholder="User Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group validateUserForm" id="divUserEmail">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope"></i></span>
+                                    <input type="text" id="txtUserEmail" class="form-control" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="txtUserFName">First Name</label>
+                                <input type="text" id="txtUserFName" class="form-control validateUserForm" placeholder="First Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtUserLName">Last Name</label>
+                                <input type="text" id="txtUserLName" class="form-control validateUserForm" placeholder="Last Name">
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-mobile-phone"></i></span>
+                                    <input type="text" id="txtUserMobilePhone" class="form-control" placeholder="Mobile Phone">
+                                </div>
+                            </div>
+                            <div id="locationField">
+                                <input id="autocomplete" placeholder="Enter your address" onfocus="geolocate()" type="text" />
+                            </div>
+                            <div class="form-group">
+                                <label for="txtUserAddress1">Address 1</label>
+                                <input type="text" id="txtUserAddress1" class="form-control" placeholder="Address 1">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtUserAddress2">Address 2</label>
+                                <input type="text" id="txtUserAddress2" class="form-control" placeholder="Address 2">
+                            </div>
+                            <div class="form-group">
+                                <label for="txtUserCity">City</label>
+                                <input type="text" id="txtUserCity" class="form-control" placeholder="City">
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <label for="ddlState">State</label>
+                                    <select id="ddlState" class="form-control select2 select2-hidden-accessible">
+                                        <option value="0">Select A State</option>
+                                    </select>
+                                </div>
+                                <div class="col-xs-12 col-md-6 form-group">
+                                    <label for="txtUserZip">Zip</label>
+                                    <input type="text" id="txtUserZip" class="form-control" placeholder="Zip">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-comment"></i></span>
+                                    <textarea id="taUserComments" rows="3" class="form-control" placeholder="Comments"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <div class="row">
+                                <button type="submit" id="btnCancelCreateUser" class="btn btn-default col-xs-12 col-sm-5 col-md-3 form-group margin-bottom">Cancel</button>
+                                <button type="submit" id="btnCreateUser" onclick="validateUser();" class="btn btn-info col-xs-12 col-sm-5 col-md-3 form-group pull-right margin-bottom">Create</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="createTaskTemplate" type="text/x-handlebars-template">
+        <div id="divCreateTask" class="inputForm hideSection">
+            <div class="col-md-6">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Create Task</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="crudInputs">
+                            <div class="form-group">
+                                <label for="ddlTaskType">Task Type</label>
+                                <select id="ddlTaskType" class="form-control select2 select2-hidden-accessible">
+                                    <option value="0">Select A Task Type</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-pencil"></i></span>
+                                    <input type="text" id="txtTaskName" class="form-control" placeholder="Task Name">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                    <input type="text" id="txtTaskAssignedTo" class="form-control" placeholder="Assigned To">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-clock-o"></i></span>
+                                    <input type="text" id="txtTaskEstHours" class="form-control" placeholder="Estimated Hours">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-money"></i></span>
+                                    <input type="text" id="txtTaskEstCost" class="form-control" placeholder="Estimated Cost">
+                                    <span class="input-group-addon" id="basic-addon1">.00</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-usd"></i></span>
+                                    <input type="text" id="txtTaskSalePrice" class="form-control" placeholder="Sale Price">
+                                    <span class="input-group-addon" id="basic-addon1">.00</span>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-comment"></i></span>
+                                    <textarea id="taTaskComments" rows="3" class="form-control" placeholder="Comments"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box-footer">
+                            <div class="row">
+                                <button type="submit" id="btnCancelCreateBusiness" class="btn btn-default col-xs-12 col-sm-5 col-md-3 form-group margin-bottom">Cancel</button>
+                                <button type="submit" id="btnCreateBusiness" class="btn btn-info col-xs-12 col-sm-5 col-md-3 form-group pull-right margin-bottom">Create</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="createCustomerTypeTemplate" type="text/x-handlebars-template">
+        <div id="divCreateCustomerType" class="inputForm hideSection">
+            <div class="col-md-6">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Create Customer Type</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="crudInputs">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-building"></i></span>
+                                    <select id="ddlCustTypeBusiness" class="form-control select2 select2-hidden-accessible">
+                                        <option value="0">Select A Business</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-industry"></i></span>
+                                    <select id="ddlCustTypeCompany" class="form-control select2 select2-hidden-accessible">
+                                        <option value="0">Select A Company</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-pencil"></i></span>
+                                    <input type="text" id="txtCustTypeDesc" class="form-control" placeholder="Customer Type Description">
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <div class="row">
+                                    <button type="submit" id="btnCancelCreateCustType" class="btn btn-default col-xs-12 col-sm-5 col-md-3 form-group margin-bottom">Cancel</button>
+                                    <button type="submit" id="btnCreateCustType" class="btn btn-info col-xs-12 col-sm-5 col-md-3 form-group pull-right margin-bottom">Create</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="createTaskTypeTemplate" type="text/x-handlebars-template">
+        <div id="divCreateTaskType" class="inputForm hideSection">
+            <div class="col-md-6">
+                <div class="box box-danger">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Create Task Type</h3>
+                    </div>
+                    <div class="box-body">
+                        <div class="crudInputs">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-building"></i></span>
+                                    <select id="ddlTaskTypeBusiness" class="form-control select2 select2-hidden-accessible">
+                                        <option value="0">Select A Business</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-industry"></i></span>
+                                    <select id="ddlTaskTypeCompany" class="form-control select2 select2-hidden-accessible">
+                                        <option value="0">Select A Company</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="basic-addon1"><i class="fa fa-pencil"></i></span>
+                                    <input type="text" id="txtTaskTypeDesc" class="form-control" placeholder="Task Type Description">
+                                </div>
+                            </div>
+                            <div class="box-footer">
+                                <div class="row">
+                                    <button type="submit" id="btnCancelCreateTaskType" class="btn btn-default col-xs-12 col-sm-5 col-md-3 form-group margin-bottom">Cancel</button>
+                                    <button type="submit" id="btnCreateTaskType" class="btn btn-info col-xs-12 col-sm-5 col-md-3 form-group pull-right margin-bottom">Create</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </script>
+
+    <script id="displayBusinessDataTemplate" type="text/x-handlebars-template">
+        <ul>
+            <li>
+                <span>Name:</span>
+                <span></span>
+            </li>
+        </ul>
+    </script>
