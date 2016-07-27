@@ -1,0 +1,89 @@
+﻿body.hold-transition .content-wrapper,
+body.hold-transition .right-side,
+body.hold-transition .main-footer,
+body.hold-transition .main-sidebar,
+body.hold-transition .left-side,
+body.hold-transition .main-header > .navbar,
+body.hold-transition .main-header .logo {
+  /* Fix for IE */
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
+}
+
+body {
+    background-color: transparent;
+}
+
+.loginPage {
+    background: url("../images/blue-sky-green-grass-hd.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.blue-sky-green-grass-hd.jpg', sizingMethod='scale');
+    -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='blue-sky-green-grass-hd.jpg', sizingMethod='scale')";
+}
+
+.login-box {
+    width: 540px;
+    margin: 7% auto;
+    background-color: #fff;
+
+    .login-logo {
+        font-size: 35px;
+        text-align: center;
+        font-weight: 300;
+
+        a {
+            color: #444;
+        }
+    }
+
+    .login-box-body {
+        background: none !important;
+        padding: 20px;
+        border-top: 0;
+        color: #666;
+
+        .formInput {
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .login-box-msg {
+            margin: 0;
+            text-align: center;
+            padding: 0 20px 20px 20px;
+        }
+
+        .form-control-feedback {
+            color: #777;
+        }
+
+        #btnLoginSubmit {
+            font-size:18px;
+        }
+
+        .divLinks {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+
+            a {
+                &:focus {
+                    text-decoration:underline !important;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .login-box {
+        width: 90%;
+        margin-top: 20px;
+    }
+}
+
+

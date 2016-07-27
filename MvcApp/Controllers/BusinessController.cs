@@ -17,7 +17,7 @@ namespace MvcApp.Controllers
         //Local Mac Mini Connection
         //string connString = "Data Source=MACMINI;Initial Catalog=Landscape_ERP;Integrated Security=True";
         //Azure Connection
-        //string connString = "Data Source=landscape-erp.database.windows.net;Initial Catalog=Landscape_ERP;Integrated Security=False;User ID=dmauk;Password=ADD PASSWORD HERE!!;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
+        string connString = "Data Source=landscape-erp.database.windows.net;Initial Catalog=Landscape_ERP;Integrated Security=False;User ID=dmauk;Password=!0a418tq0!;Connect Timeout=60;Encrypt=False;TrustServerCertificate=False";
         
         // GET api/<controller>
         public List<Business> Get()
