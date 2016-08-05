@@ -1,4 +1,5 @@
-﻿@{
+﻿@model MvcApp.Models.Login
+@{
     Layout = null;
 }
 
@@ -19,6 +20,7 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="~/AdminLte/dist/css/AdminLTE.css">
     <link rel="stylesheet" href="Content/Login.css">
+    <link rel="stylesheet" href="Content/Site.css">
     <link rel="icon" type="image/x-icon" href="~/Images/favicon.png" />
     <title>Semper FI Landscaping</title>
     <style>
@@ -27,25 +29,31 @@
 <body>
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Semper</b>FI</a>
+            <b>Semper</b>FI
         </div>
-        <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">Sign in to start your session</p>
-            <form action="../../index2.html" method="post">
+            <form action="../User/Login" method="post">
+                @Html.TextBoxFor(m => m.Latitude, null, new { id = "hdnLat", type = "text", @class = "hide" })
+                @Html.TextBoxFor(m => m.Longitude, null, new { id = "hdnLong", type = "text", @class = "hide" })
+                @Html.AntiForgeryToken()
                 <div class="formInput">
-                    <input type="email" class="form-control" placeholder="Email">
+                    @Html.TextBoxFor(m => m.Email, null, new { id = "txtEmail", type = "email", placeholder = "Email", @class = "form-control loginRequired" })
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                 </div>
                 <div class="formInput">
-                    <input type="password" class="form-control" placeholder="Password">
+                    @Html.TextBoxFor(m => m.Password, null, new { id = "txtPassword", type = "password", placeholder = "Password", @class = "form-control loginRequired" })
                     <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                </div>
+                <div class="row errorMsg">
+                    @Html.LabelFor(vb => vb.ErrorMsg, "", new { id = "lblErrorMsg" })
+                    <label>@ViewBag.ErrorMsg</label>
+                    <ul class="ulErrorMsg"></ul>
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
                         <button type="submit" id="btnLoginSubmit" class="btn btn-primary btn-block btn-flat">Sign In</button>
                     </div>
-                    <!-- /.col -->
                 </div>
             </form>
             <div class="divLinks">
@@ -53,13 +61,13 @@
                 <a href="register.html" class="text-center">Register a new membership</a>
             </div>
         </div>
-        <!-- /.login-box-body -->
     </div>
-    <!-- /.login-box -->
     <!-- jQuery 2.2.0 -->
     <script type="text/javascript" src="AdminLte/Plugins/jQuery/jQuery-2.2.0.min.js"></script>
     <!-- Bootstrap 3.3.6 -->
     <script src="Content/bootstrap/js/bootstrap.min.js"></script>
+    <script src="Scripts/Common.Logic.js"></script>
+    <script src="Scripts/Login.js"></script>
 </body>
 </html>
 

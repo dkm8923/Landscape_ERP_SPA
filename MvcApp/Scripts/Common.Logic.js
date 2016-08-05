@@ -35,4 +35,19 @@
 
     };
 
+    //GeoLocation Logging Logic
+    this.getLocation = function () {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        }
+    };
+
+    function showPosition(position) {
+        console.log("showPosition");
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+        $("#hdnLat").val(lat);
+        $("#hdnLong").val(long);
+    };
+
 };

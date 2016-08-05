@@ -141,15 +141,18 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BusinessController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Business.cs" />
+    <Compile Include="Models\Login.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UtilityCode\Common.cs" />
     <Compile Include="UtilityCode\ConfigValues.cs" />
+    <Compile Include="UtilityCode\Constants.cs" />
     <Compile Include="UtilityCode\Procedures.cs" />
     <Compile Include="UtilityCode\SQL.cs" />
   </ItemGroup>
@@ -1141,6 +1144,7 @@
     <Content Include="Scripts\jquery\knockout-2.2.0.js" />
     <Content Include="Scripts\jquery\modernizr-2.6.2.js" />
     <Content Include="Scripts\jquery\_references.js" />
+    <Content Include="Scripts\Login.js" />
     <Content Include="Scripts\Main.js" />
     <Content Include="Scripts\Plugins\handlebars-v4.0.5.js" />
     <Content Include="Scripts\Plugins\jinqJs.js" />
@@ -1160,7 +1164,7 @@
     <Content Include="Views\Shared\__Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

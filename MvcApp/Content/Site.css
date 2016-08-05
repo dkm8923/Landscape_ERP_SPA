@@ -8,3 +8,9 @@
     box-shadow: none;
 }
 
+.ulErrorMsg {
+    list-style:none;
+    width: 95%;
+}
+
+.hide {display:none;}

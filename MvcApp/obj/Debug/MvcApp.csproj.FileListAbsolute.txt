@@ -33,7 +33,6 @@ C:\Users\Dan Mauk\Documents\Visual Studio 2013\Projects\MvcApp\MvcApp\obj\Debug\
 C:\Users\Dan Mauk\Documents\Visual Studio 2013\Projects\MvcApp\MvcApp\bin\System.Web.Cors.dll
 C:\Users\Dan Mauk\Documents\Visual Studio 2013\Projects\MvcApp\MvcApp\bin\System.Web.Http.Cors.dll
 C:\Users\Dan Mauk\Documents\Visual Studio 2013\Projects\MvcApp\MvcApp\bin\System.Web.Http.Cors.xml
-C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\MvcApp\obj\Debug\MvcApp.csprojResolveAssemblyReference.cache
 C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\MvcApp\obj\Debug\MvcApp.dll
 C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\MvcApp\bin\MvcApp.dll.config
 C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\MvcApp\bin\MvcApp.dll
@@ -68,3 +67,4 @@ C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\MvcApp\bin\System.Web.WebPa
 C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\MvcApp\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\MvcApp\bin\System.Web.WebPages.Razor.xml
 C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\MvcApp\obj\Debug\MvcApp.pdb
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\MvcApp\obj\Debug\MvcApp.csprojResolveAssemblyReference.cache
