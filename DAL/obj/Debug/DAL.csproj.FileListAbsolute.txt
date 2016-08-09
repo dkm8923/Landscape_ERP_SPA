@@ -1,0 +1,9 @@
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\DAL\bin\Debug\DAL.dll
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\DAL\bin\Debug\DAL.pdb
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\DAL\bin\Debug\Models.dll
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\DAL\bin\Debug\Models.pdb
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\DAL\obj\Debug\DAL.dll
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\DAL\obj\Debug\DAL.pdb
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\DAL\bin\Debug\Interfaces.dll
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\DAL\bin\Debug\Interfaces.pdb

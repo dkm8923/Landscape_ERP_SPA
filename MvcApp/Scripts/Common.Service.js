@@ -1,12 +1,12 @@
 ﻿var commonService = function () {
 
     this.get_Business = function () {
-        //console.log("get_Business");
+        console.log("get_Business");
 
         return $.ajax({
             type: "GET",
-            url: 'api/Business',//url: 'Business/Post',
-            data: "",
+            url: 'BusinessApi/get',//url: 'Business/Post',
+            data: "9",
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
             success: function (dataValues) {

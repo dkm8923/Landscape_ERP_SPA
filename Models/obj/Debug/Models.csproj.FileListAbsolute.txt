@@ -1,0 +1,5 @@
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\Models\bin\Debug\Models.dll
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\Models\bin\Debug\Models.pdb
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\Models\obj\Debug\Models.csprojResolveAssemblyReference.cache
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\Models\obj\Debug\Models.dll
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\Models\obj\Debug\Models.pdb

@@ -1,0 +1,7 @@
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\Interfaces\bin\Debug\Interfaces.dll
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\Interfaces\bin\Debug\Interfaces.pdb
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\Interfaces\bin\Debug\Models.dll
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\Interfaces\bin\Debug\Models.pdb
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\Interfaces\obj\Debug\Interfaces.csprojResolveAssemblyReference.cache
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\Interfaces\obj\Debug\Interfaces.dll
+C:\Users\Dan Mauk\Documents\GitHub\Landscape_ERP_SPA\Interfaces\obj\Debug\Interfaces.pdb

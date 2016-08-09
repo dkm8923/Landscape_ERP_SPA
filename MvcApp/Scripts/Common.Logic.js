@@ -1,5 +1,5 @@
 ﻿var commonLogic = function () {
-
+    
     this.createWindow = function (obj) {
         
         var kWindow = $("<div id='" + obj.Id + "'></div>");
