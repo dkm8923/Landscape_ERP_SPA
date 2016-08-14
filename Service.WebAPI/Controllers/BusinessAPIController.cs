@@ -10,7 +10,7 @@ using Interfaces;
 
 namespace Service.WebAPI.Controllers
 {
-    public class BusinessController : ApiController, IBusiness
+    public class BusinessAPIController : ApiController, IBusiness
     {
         private Business_DAL objDal = new Business_DAL();
 
